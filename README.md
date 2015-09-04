@@ -16,3 +16,6 @@ An open-source, programmable LED hoop
 ##Goals
 
 Double rainbow
+
+##Schematic
+![image](https://cloud.githubusercontent.com/assets/3289118/9676285/06eaa9da-527e-11e5-921b-eeb3779ad978.png)
