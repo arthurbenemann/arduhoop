@@ -4,6 +4,8 @@ An open-source, programmable LED hoop
 
 **Currently in progress...**
 
+![img_20150903_230648_1-2](https://cloud.githubusercontent.com/assets/3289118/9678003/5fc4a850-5295-11e5-96ae-e56861d32a97.jpg)
+
 ##Materials
 
 - 4m LED strip
