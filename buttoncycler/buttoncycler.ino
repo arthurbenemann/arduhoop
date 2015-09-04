@@ -24,7 +24,7 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
 bool oldState = HIGH;
-int showType = 6;
+int showType = 0;
 
 void setup() {
   pinMode(BUTTON_PIN, INPUT_PULLUP);
@@ -68,9 +68,9 @@ void startShow(int i) {
             break;
     case 5: rainbow(2);
             break;
-    case 6: theaterChaseRainbow(50);
+    case 6: theaterChaseRainbow(5);
             break;
-    case 7: advancedRainbowCycle(1);
+    case 7: rainbowCycle(1);
             break;
   }
 }
@@ -98,24 +98,14 @@ void rainbow(uint8_t wait) {
 
 // Slightly different, this makes the rainbow equally distributed throughout
 void rainbowCycle(uint8_t wait) {
-  uint16_t i, j,k;
-  uint16_t space=20;
+  uint16_t i, j;
 
   for(j=0; ; j++) { // 5 cycles of all colors on wheel
     for(i=0; i< strip.numPixels(); i++) {
-      if(i>(j+space) || i<j){
         strip.setPixelColor(i, Wheel(((2 * i * 256 / strip.numPixels()) - j) & 255));
-      }else{
-        strip.setPixelColor(i, 0);
-      }
     }
     strip.show();
     delay(wait);
-
-    space = 20.0*(1.0+sin(k++/60.0))+1;
-    if(j>240){
-      j=0;
-    }
   }
 }
 
@@ -128,7 +118,7 @@ void advancedRainbowCycle(uint8_t wait) {
       if(i>(j+space) || i<j){
         strip.setPixelColor(i, Wheel(((2 * i * 256 / strip.numPixels()) - j) & 255));
       }else{
-        strip.setPixelColor(i, 0);
+        strip.setPixelColor(i, 0);  
       }
     }
     strip.show();
@@ -191,3 +181,5 @@ uint32_t Wheel(byte WheelPos) {
   WheelPos -= 170;
   return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }
+
+
