@@ -3,7 +3,7 @@
 #include <Adafruit_NeoPixel.h>
 
 #define PIXEL_PIN    6    // Digital IO pin connected to the NeoPixels.
-#define PIXEL_COUNT 240
+#define PIXEL_COUNT 181
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
