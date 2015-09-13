@@ -1,6 +1,8 @@
-#Arduhoop
+![arduhoop-color-small](https://cloud.githubusercontent.com/assets/11339965/9835789/a2575b64-59b0-11e5-9cd8-e24323b4e42e.png)
 
 An open-source, programmable LED hoop
+
+--
 
 **Currently in progress...**
 
