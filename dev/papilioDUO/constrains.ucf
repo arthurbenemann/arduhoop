@@ -1,0 +1,17 @@
+NET ARDUINO_RESET  LOC="P139" | IOSTANDARD=LVTTL;                                # ARDUINO_RESET
+
+
+NET A10     LOC="P131" | IOSTANDARD=LVTTL;                                # A10
+NET A11     LOC="P132" | IOSTANDARD=LVTTL;                                # A11
+NET A12     LOC="P133" | IOSTANDARD=LVTTL;                                # A12
+NET A13     LOC="P134" | IOSTANDARD=LVTTL;                                # A13
+
+NET SD_CS 	LOC="P87" | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
+NET SD_MOSI LOC="P84" | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
+NET SD_SCK 	LOC="P82" | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
+NET SD_MISO LOC="P80" | IOSTANDARD=LVTTL;
+
+## Prohibit the automatic placement of pins that are connected to VCC or GND for configuration.
+CONFIG PROHIBIT=P144;
+CONFIG PROHIBIT=P69;
+CONFIG PROHIBIT=P60;
