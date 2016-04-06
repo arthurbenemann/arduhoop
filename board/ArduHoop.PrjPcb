@@ -106,6 +106,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SVKYQVTX
 
+[ProjectVariant1]
+Description=Prototype
+AllowFabrication=0
+ParameterCount=0
+VariationCount=1
+Variation1=Designator=R7|UniqueId=\UDQKLUJK|Kind=1|AlternatePart= 
+ParamVariationCount=0
+
 [Configuration1]
 Name=Default Configuration
 ParameterCount=0
