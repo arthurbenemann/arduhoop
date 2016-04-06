@@ -56,7 +56,7 @@ GenerateClassCluster=0
 DocumentUniqueId=DGSFRLTM
 
 [Document2]
-DocumentPath=PCB.PcbDoc
+DocumentPath=ArduhoopPCB.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
