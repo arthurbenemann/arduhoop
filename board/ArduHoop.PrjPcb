@@ -110,8 +110,7 @@ DocumentUniqueId=SVKYQVTX
 Description=Prototype
 AllowFabrication=0
 ParameterCount=0
-VariationCount=1
-Variation1=Designator=R7|UniqueId=\UDQKLUJK|Kind=1|AlternatePart= 
+VariationCount=0
 ParamVariationCount=0
 
 [Parameter1]
