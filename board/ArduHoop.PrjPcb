@@ -130,6 +130,10 @@ ParameterCount=0
 VariationCount=0
 ParamVariationCount=0
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for ArduHoop\Board Information - ArduhoopPCB.html
+DItemRevisionGUID=
+
 [Parameter1]
 Name=ProjectState
 Value=PRELIMINARY
