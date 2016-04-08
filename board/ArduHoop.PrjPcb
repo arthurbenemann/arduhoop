@@ -134,9 +134,25 @@ ParamVariationCount=0
 DocumentPath=Project Outputs for ArduHoop\Board Information - ArduhoopPCB.html
 DItemRevisionGUID=
 
+[GeneratedDocument2]
+DocumentPath=Project Outputs for ArduHoop\Design Rule Check - ArduhoopPCB.html
+DItemRevisionGUID=
+
 [Parameter1]
 Name=ProjectState
 Value=PRELIMINARY
+
+[Parameter2]
+Name=ProjectRevision
+Value=V1I1
+
+[Parameter3]
+Name=ProjectTitle
+Value=Arduhoop
+
+[Parameter4]
+Name=ProjectEng
+Value=Arthur Benemann
 
 [Configuration1]
 Name=Default Configuration
