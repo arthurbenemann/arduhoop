@@ -30,7 +30,7 @@ DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
-OutputPath=
+OutputPath=Project Outputs for ArduHoop
 LogFolderPath=
 ManagedProjectGUID=
 
@@ -131,59 +131,71 @@ VariationCount=0
 ParamVariationCount=0
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.EXTREP
+DocumentPath=Project Outputs for ArduHoop\NC Drill\ArduhoopPCB.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.G1
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GBL
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.G1
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GBO
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.G2
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GBP
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GBS
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GP1
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GTL
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GTO
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GTP
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GTS
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.REP
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.RUL
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for ArduHoop\Design Rule Check - ArduhoopPCB.html
+DocumentPath=Project Outputs for ArduHoop\NC Drill\ArduhoopPCB.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for ArduHoop\Gerber\ArduhoopPCB.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for ArduHoop\NC Drill\ArduhoopPCB.TXT
 DItemRevisionGUID=
 
 [Parameter1]
@@ -196,7 +208,7 @@ Value=RELEASED
 
 [Parameter3]
 Name=ProjectRevision
-Value=V1.1
+Value=V1.2
 
 [Parameter4]
 Name=ProjectEng
@@ -249,7 +261,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for ArduHoop
 
 [OutputGroup1]
 Name=Netlist Outputs
