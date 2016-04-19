@@ -131,24 +131,20 @@ VariationCount=0
 ParamVariationCount=0
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for ArduHoop\Board Information - ArduhoopPCB.html
-DItemRevisionGUID=
-
-[GeneratedDocument2]
 DocumentPath=Project Outputs for ArduHoop\Design Rule Check - ArduhoopPCB.html
 DItemRevisionGUID=
 
 [Parameter1]
+Name=ProjectTitle
+Value=Arduhoop
+
+[Parameter2]
 Name=ProjectState
 Value=PRELIMINARY
 
-[Parameter2]
-Name=ProjectRevision
-Value=V1I1
-
 [Parameter3]
-Name=ProjectTitle
-Value=Arduhoop
+Name=ProjectRevision
+Value=V1.1
 
 [Parameter4]
 Name=ProjectEng
