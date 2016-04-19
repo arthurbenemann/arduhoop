@@ -140,7 +140,7 @@ Value=Arduhoop
 
 [Parameter2]
 Name=ProjectState
-Value=PRELIMINARY
+Value=RELEASED
 
 [Parameter3]
 Name=ProjectRevision
