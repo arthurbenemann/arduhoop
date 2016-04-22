@@ -30,7 +30,7 @@ DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
-OutputPath=Project Outputs for ArduHoop
+OutputPath=
 LogFolderPath=
 ManagedProjectGUID=
 
@@ -199,20 +199,20 @@ DocumentPath=Project Outputs for ArduHoop\NC Drill\ArduhoopPCB.TXT
 DItemRevisionGUID=
 
 [Parameter1]
-Name=ProjectTitle
-Value=Arduhoop
+Name=ProjectEng
+Value=Arthur Benemann
 
 [Parameter2]
-Name=ProjectState
-Value=RELEASED
-
-[Parameter3]
 Name=ProjectRevision
 Value=V1.2
 
+[Parameter3]
+Name=ProjectState
+Value=RELEASED
+
 [Parameter4]
-Name=ProjectEng
-Value=Arthur Benemann
+Name=ProjectTitle
+Value=Arduhoop
 
 [Configuration1]
 Name=Default Configuration
@@ -261,7 +261,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=Project Outputs for ArduHoop
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
