@@ -1,131 +1,44 @@
-// ArduHoop
+#include "arduhoop.h"
 
-#include <Adafruit_NeoPixel.h>
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(led_number_pixels, led_data_pin, NEO_GRB + NEO_KHZ800);
+MPU6050 accelgyro;
 
-#define PIXEL_PIN    6    // Digital IO pin connected to the NeoPixels.
-#define PIXEL_COUNT 181
-
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
-
-void setup() {
-  strip.begin();
-  strip.show(); // Initialize all pixels to 'off'
-}
+int loop_cnt;
+int16_t ax, ay, az, gx, gy, gz;
+int audio;
 
 void loop() {
-  rainbowCycle(1);
-  // colorWipe(strip.Color(0, 0, 0), 5);    // Black/off
-  // colorWipe(strip.Color(255, 0, 0), 5);  // Red
-  // colorWipe(strip.Color(0, 255, 0), 5);  // Green
-  // colorWipe(strip.Color(0, 0, 255), 5);  // Blue
-  // colorWipe(strip.Color(255, 255, 255), 5);  // Blue
-  //rainbow(2);
-  //theaterChaseRainbow(5);
+  Serial.print("Time "); Serial.print(millis()); Serial.print("ms\t");
+
+  // read raw accel/gyro measurements from device
+  accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+  //accelgyro.getAcceleration(&ax, &ay, &az);
+  //accelgyro.getRotation(&gx, &gy, &gz);
+
+  gx = abs(gx);
+  gy = abs(gy);
+  gz = abs(gz);
+
+  Serial.print("Acc:\t");
+  Serial.print(gx); Serial.print("\t");
+  Serial.print(gy); Serial.print("\t");
+  Serial.print(gz); Serial.print("\t");
+
+  for (int i = 0; i < led_number_pixels; i++) {
+    pixels.setPixelColor(i, ((uint8_t)(gx >> 10)), ((uint8_t)(gy >> 10)), ((uint8_t)(gz >> 10))); // Moderately bright green color.
+  }
+  pixels.show(); // This sends the updated pixel color to the hardware.
+
+  audio = readMic();
+  Serial.print("Audio "); Serial.print(audio); Serial.print("\t");
+
+  Serial.print("SW "); Serial.print(isButtonPressed() ? "[X]" : "[ ]"); Serial.print("\t");
+  Serial.print("SD_SW "); Serial.print(isSDcardPresent() ? "[X]" : "[ ]"); Serial.print("\t");
+  Serial.print("Charging "); Serial.print(isBatteryCharging() ? "[X]" : "[ ]"); Serial.print("\t");
+  Serial.print("Voltage "); Serial.print(batteryVoltage()); Serial.print("V\t");
+
+  Serial.println(" ");
+  loop_cnt++;
 }
 
-// Fill the dots one after the other with a color
-void colorWipe(uint32_t c, uint8_t wait) {
-  for(uint16_t i=0; i<strip.numPixels(); i++) {
-    strip.setPixelColor(i, c);
-    strip.show();
-    delay(wait);
-  }
-}
 
-void rainbow(uint8_t wait) {
-  uint16_t i, j;
-
-  for(j=0; j<256; j++) {
-    for(i=0; i<strip.numPixels(); i++) {
-      strip.setPixelColor(i, Wheel((i+j) & 255));
-    }
-    strip.show();
-    delay(wait);
-  }
-}
-
-// Slightly different, this makes the rainbow equally distributed throughout
-void rainbowCycle(uint8_t wait) {
-  uint16_t i, j;
-
-  for(j=0; ; j++) { // 5 cycles of all colors on wheel
-    for(i=0; i< strip.numPixels(); i++) {
-        strip.setPixelColor(i, Wheel(((i * 256 / strip.numPixels())+j) & 255));
-    }
-    strip.show();
-    delay(wait);
-  }
-}
-
-void advancedRainbowCycle(uint8_t wait) {
-  uint16_t i, j,k;
-  uint16_t space=20;
-
-  for(j=0; ; j++) { // 5 cycles of all colors on wheel
-    for(i=0; i< strip.numPixels(); i++) {
-      if(i>(j+space) || i<j){
-        strip.setPixelColor(i, Wheel(((2 * i * 256 / strip.numPixels()) - j) & 255));
-      }else{
-        strip.setPixelColor(i, 0);
-      }
-    }
-    strip.show();
-    delay(wait);
-
-    space = 20.0*(1.0+sin(k++/60.0))+1;
-    if(j>240){
-      j=0;
-    }
-  }
-}
-
-//Theatre-style crawling lights.
-void theaterChase(uint32_t c, uint8_t wait) {
-  for (int j=0; j<10; j++) {  //do 10 cycles of chasing
-    for (int q=0; q < 3; q++) {
-      for (int i=0; i < strip.numPixels(); i=i+3) {
-        strip.setPixelColor(i+q, c);    //turn every third pixel on
-      }
-      strip.show();
-
-      delay(wait);
-
-      for (int i=0; i < strip.numPixels(); i=i+3) {
-        strip.setPixelColor(i+q, 0);        //turn every third pixel off
-      }
-    }
-  }
-}
-
-//Theatre-style crawling lights with rainbow effect
-void theaterChaseRainbow(uint8_t wait) {
-  for (int j=0; j < 256; j++) {     // cycle all 256 colors in the wheel
-    for (int q=0; q < 3; q++) {
-      for (int i=0; i < strip.numPixels(); i=i+3) {
-        strip.setPixelColor(i+q, Wheel( (i+j) % 255));    //turn every third pixel on
-      }
-      strip.show();
-
-      delay(wait);
-
-      for (int i=0; i < strip.numPixels(); i=i+3) {
-        strip.setPixelColor(i+q, 0);        //turn every third pixel off
-      }
-    }
-  }
-}
-
-// Input a value 0 to 255 to get a color value.
-// The colours are a transition r - g - b - back to r.
-uint32_t Wheel(byte WheelPos) {
-  WheelPos = 255 - WheelPos;
-  if(WheelPos < 85) {
-    return strip.Color(255 - WheelPos * 3, 0, WheelPos * 3);
-  }
-  if(WheelPos < 170) {
-    WheelPos -= 85;
-    return strip.Color(0, WheelPos * 3, 255 - WheelPos * 3);
-  }
-  WheelPos -= 170;
-  return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
-}
