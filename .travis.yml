@@ -7,9 +7,10 @@ before_install:
   - tar xf arduino-1.6.5-linux64.tar.xz
   - sudo mv arduino-1.6.5 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
+install:
+  - sudo ln -s src/libraries/Adafruit_NeoPixel /usr/local/share/arduino/libraries/Adafruit_NeoPixel
+  - sudo ln -s src/libraries/I2Cdev /usr/local/share/arduino/libraries/I2Cdev
+  - sudo ln -s src/libraries/MPU6050 /usr/local/share/arduino/libraries/MPU6050
+  - sudo ln -s src/libraries/SdFat /usr/local/share/arduino/libraries/SdFat
 script:
-  - sudo ln -s src/libraries/Adafruit_NeoPixel /usr/src/arduino/libraries/Adafruit_NeoPixel
-  - sudo ln -s src/libraries/I2Cdev /usr/src/arduino/libraries/I2Cdev
-  - sudo ln -s src/libraries/MPU6050 /usr/src/arduino/libraries/MPU6050
-  - sudo ln -s src/libraries/SdFat /usr/src/arduino/libraries/SdFat
   - arduino --verify --board arduino:avr:leonardo src/arduhoop/arduhoop.ino
