@@ -1,11 +1,13 @@
 #include "arduhoop.h"
 
-const float BATTERY_SCALING = 0.0064453125;
+const float BATTERY_SCALING = 2.56 * 2.0 / 1023;
 const float alpha = 0.01;
 float sample_filter = -1;
 
+const int MIC_BIAS = 667;
+
 int readMic() {
-  return analogRead(mic_pin);
+  return analogRead(mic_pin) - MIC_BIAS;
 }
 
 float batteryVoltage() {

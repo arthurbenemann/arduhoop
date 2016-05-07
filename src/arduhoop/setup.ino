@@ -1,10 +1,11 @@
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial);
+  //while (!Serial);
   Serial.println("Arduhoop");
 
   Serial.println("Initializing battery sensors...   ");
+  analogReference(INTERNALs);
   pinMode(bat_stat, INPUT);
 
   Serial.println("Initializing mic...   ");
@@ -12,10 +13,10 @@ void setup() {
   digitalWrite(audio_pwr, HIGH);
 
   Serial.println("Initializing LED string...");
-  pixels.begin(); // This initializes the NeoPixel library.
   pinMode(led_pwr, OUTPUT);
   digitalWrite(led_pwr, HIGH);
-  
+  pixels.begin(); // This initializes the NeoPixel library.
+
 
   Serial.print("Initializing I2C devices... ");
   Wire.begin();
