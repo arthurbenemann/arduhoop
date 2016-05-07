@@ -20,7 +20,7 @@ float batteryVoltage() {
 }
 
 bool isBatteryCharging() {
-  return digitalRead(bat_sense) == LOW;
+  return digitalRead(bat_stat) == LOW;
 }
 
 bool isButtonPressed() {

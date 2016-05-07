@@ -13,6 +13,9 @@ void setup() {
 
   Serial.println("Initializing LED string...");
   pixels.begin(); // This initializes the NeoPixel library.
+  pinMode(led_pwr, OUTPUT);
+  digitalWrite(led_pwr, HIGH);
+  
 
   Serial.print("Initializing I2C devices... ");
   Wire.begin();
