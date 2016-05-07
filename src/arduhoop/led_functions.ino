@@ -12,3 +12,12 @@ uint32_t Wheel(byte WheelPos) {
   WheelPos -= 170;
   return pixels.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }
+
+
+void setColor(int intensity) {
+  byte value = constrain(intensity, 0, 255);
+  for (int i = 0; i < led_number_pixels; i++) {
+    pixels.setPixelColor(i, value, value, value);
+  }
+  pixels.show();
+}

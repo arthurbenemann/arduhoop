@@ -5,7 +5,7 @@ void setup() {
   Serial.println("Arduhoop");
 
   Serial.println("Initializing battery sensors...   ");
-  analogReference(INTERNALs);
+  analogReference(INTERNAL);
   pinMode(bat_stat, INPUT);
 
   Serial.println("Initializing mic...   ");
