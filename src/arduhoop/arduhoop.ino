@@ -6,12 +6,18 @@ MPU6050 accelgyro;
 int cnt;
 
 void loop() {
-  //debug();
+  if(Serial){
+    debug();
+  }
 
   if(isButtonPressed()){
     delay(500);
     while(isButtonPressed());
-    digitalWrite(led_pwr, !digitalRead(led_pwr));
+    if(digitalRead(led_pwr) == HIGH){
+      digitalWrite(led_pwr, LOW);
+    }else{
+      digitalWrite(led_pwr, HIGH);
+    }
   }
 
   cnt++;
