@@ -33,3 +33,23 @@ bool isSDcardPresent() {
   return digitalRead(sd_sw) == LOW;
 }
 
+
+void ledsOn(){
+    if(batteryVoltage() > 3.50){
+      digitalWrite(led_pwr, HIGH);
+    }else{
+      ledsOff();
+    }
+}
+
+void ledsOff(){
+      digitalWrite(led_pwr, LOW);
+}
+
+void LedsToggle(){
+  if(digitalRead(led_pwr) == HIGH){
+      ledsOff();
+  }else{
+      ledsOn();
+  } 
+}

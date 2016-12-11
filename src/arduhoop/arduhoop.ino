@@ -13,14 +13,17 @@ void loop() {
   if(isButtonPressed()){
     delay(500);
     while(isButtonPressed());
-    if(digitalRead(led_pwr) == HIGH){
+    if(digitalRead(led_pwr) == HIGH or batteryVoltage() < 3.50){
       digitalWrite(led_pwr, LOW);
     }else{
       digitalWrite(led_pwr, HIGH);
     }
   }
 
-  cnt++;
+  if(batteryVoltage() < 3.10){
+      ledsOff();
+    }
+
   for (int i = 0; i < led_number_pixels; i++) {
     // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
     pixels.setPixelColor(i, Wheel(cnt), Wheel(80 + cnt), Wheel(160 + cnt)); // Moderately bright green color.

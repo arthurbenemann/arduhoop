@@ -14,7 +14,7 @@ void setup() {
 
   Serial.println("Initializing LED string...");
   pinMode(led_pwr, OUTPUT);
-  digitalWrite(led_pwr, HIGH);
+  ledsOn();
   pixels.begin(); // This initializes the NeoPixel library.
 
 
