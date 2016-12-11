@@ -10,7 +10,7 @@
 
 // LED
 const int led_data_pin = 10;
-const int led_number_pixels = 6;
+const int led_number_pixels = 180;
 const int led_pwr =  11;
 
 // SDCard
